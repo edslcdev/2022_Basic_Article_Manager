@@ -1,5 +1,6 @@
 package com.KoreaIT.java.BAM;
 
+import java.security.Identity;
 import java.util.Scanner;
 
 public class Main {
@@ -8,12 +9,33 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		int lastArticle = 0; 
+		
 		while(true) {
-			System.out.printf("명령어) ");;
+			
+			System.out.printf("명령어) ");
 			String cmd = sc.nextLine();
 			
 			if(cmd.equals("exit")) {
 				break;
+			}else if(cmd.equals("article list")) {
+				System.out.println("게시글이 없습니다");
+			}else if(cmd.equals("article write")) {
+				int Id = lastArticle  + 1;
+				lastArticle = Id;	
+			    System.out.printf("제목: ");
+			    String title = sc.nextLine();
+			    System.out.printf("내용: ");
+			    String content =sc.nextLine();
+				
+//				i++;
+				
+				System.out.printf("%d 번 글이 생성되었습니다\n", lastArticle);
+				
+			}else if(cmd.length()==0) {
+					System.out.println("명령어를입력해 주세요");
+			} else {
+				System.out.println("존재하지 않는 명령어 입니다");
 			}
 		}
 		
